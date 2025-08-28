@@ -1,0 +1,17 @@
+Biblia Reina Valera 1960,Sociedades Bíblicas Unidas,1960,disponible
+El Hobbit,J.R.R. Tolkien,1937,disponible
+La Comunidad del Anillo,J.R.R. Tolkien,1954,disponible
+Las Dos Torres,J.R.R. Tolkien,1954,disponible
+El Retorno del Rey,J.R.R. Tolkien,1955,disponible
+El león la bruja y el armario,C.S. Lewis,1950,disponible
+El príncipe Caspian,C.S. Lewis,1951,disponible
+La travesía del Viajero del Alba,C.S. Lewis,1952,disponible
+La silla de plata,C.S. Lewis,1953,disponible
+El caballo y el muchacho,C.S. Lewis,1954,disponible
+El sobrino del mago,C.S. Lewis,1955,disponible
+La última batalla,C.S. Lewis,1956,disponible
+Mero Cristianismo,C.S. Lewis,1952,disponible
+Cartas del diablo a su sobrino,C.S. Lewis,1942,prestado
+El Quijote,Miguel de Cervantes,1605,disponible
+Cien años de soledad,Gabriel Garcia Marquez,1967,prestado
+Introduccion a Python,Bill Lubanovic,2019,disponible,PDF
