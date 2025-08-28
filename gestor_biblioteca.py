@@ -28,7 +28,7 @@ class Libro:
         if nuevo_estado in ["disponible", "prestado"]:
             self._estado = nuevo_estado
         else:
-            print("Error: Estado no válido.")
+            print("⚠️ Error: Estado no válido.")
     
     def __str__(self):
         return f'Título: {self._titulo}, Autor: {self._autor}, Año: {self._anio_publicacion}, Estado: {self._estado}'
@@ -74,11 +74,11 @@ class Biblioteca:
         libro_a_eliminar = self.buscar_libro(titulo)
         try:
             if not libro_a_eliminar:
-                raise ValueError(f'Error: El libro "{titulo}" no se encontró en la biblioteca.')
+                raise ValueError(f'⚠️ Error: El libro "{titulo}" no se encontró en la biblioteca.')
             self._libros.remove(libro_a_eliminar)
             print(f'🗑️  Libro "{titulo}" eliminado correctamente.')
         except ValueError as e:
-            print(f"Error al eliminar: {e}")
+            print(f"⚠️ Error al eliminar: {e}")
 
     def buscar_libro(self, titulo):
         for libro in self._libros:
@@ -88,13 +88,13 @@ class Biblioteca:
 
     def listar_libros(self):
         if not self._libros:
-            print("ℹ️  La biblioteca está vacía.")
+            print("⚠️  La biblioteca está vacía.")
             return
         
-        print("\n--- Listado de Libros ---")
+        print("\n"+"📕📗📘📙"*12+"\n\n"+"📖 Listado de Libros 📖")
         for libro in self._libros:
             print(f"- {libro}")
-        print("-------------------------\n")
+        print("\n"+"📕📗📘📙"*12+"\n")
 
 
     def marcar_libro_prestado(self, titulo):
@@ -140,7 +140,7 @@ class Biblioteca:
                     self._libros.append(libro)
             print("🚀 Libros cargados desde el archivo.")
         except FileNotFoundError:
-            print("ℹ️  Archivo 'stock_libros.txt' no encontrado. Se creará uno nuevo al salir.")
+            print("⚠️ Archivo 'stock_libros.txt' no encontrado. Se creará uno nuevo al salir.")
         except Exception as e:
             print(f"Error al cargar el archivo: {e}")
 
@@ -160,7 +160,7 @@ class Biblioteca:
 
 
 def mostrar_menu():
-    print("\n--- Gestor de Biblioteca ---")
+    print("\n📖 Gestor de Biblioteca 📖")
     print("1. Agregar libro")
     print("2. Eliminar libro")
     print("3. Ver todos los libros")
@@ -180,16 +180,16 @@ def main():
             titulo = input("Título: ")
             autor = input("Autor: ")
             anio = input("Año de publicación: ")
-            es_digital = input("¿Es un libro digital? (s/n): ").lower()
+            es_digital = input("🗂️ ¿Es un libro digital? (s/n): ").lower()
             if es_digital == 's':
-                formato = input("Formato (PDF, ePub, etc.): ")
+                formato = input("🗂️ Formato (PDF, ePub, etc.): ")
                 nuevo_libro = LibroDigital(titulo, autor, int(anio), formato)
             else:
                 nuevo_libro = Libro(titulo, autor, int(anio))
             mi_biblioteca.agregar_libro(nuevo_libro)
 
         elif opcion == '2':
-            titulo = input("Introduce el título del libro a eliminar: ")
+            titulo = input("🗄️ Introduce el título del libro a eliminar: ")
             mi_biblioteca.eliminar_libro(titulo)
 
         elif opcion == '3':
@@ -204,20 +204,20 @@ def main():
                 print(f'⚠️  El libro "{titulo}" no se encontró.')
 
         elif opcion == '5':
-            titulo = input("Introduce el título del libro a prestar: ")
+            titulo = input("🗄️ Introduce el título del libro a prestar: ")
             mi_biblioteca.marcar_libro_prestado(titulo)
             
         elif opcion == '6':
-            titulo = input("Introduce el título del libro a devolver: ")
+            titulo = input("🗄️ Introduce el título del libro a devolver: ")
             mi_biblioteca.devolver_libro(titulo)
 
         elif opcion == '7':
             mi_biblioteca.guardar_libros()
-            print("👋 ¡Hasta luego!")
+            print("👋 ¡Gracias por su preferencia!¡Vuelva pronto!")
             break
 
         else:
-            print("Opción no válida. Inténtalo de nuevo.")
+            print("⚠️ Opción no válida. Inténtalo de nuevo.")
 
 if __name__ == "__main__":
     main()
